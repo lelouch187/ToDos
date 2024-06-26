@@ -1,7 +1,7 @@
 <div [class.active]="is_visible"
-  class="modal" #modal>
+  class="modal">
   <div class="modal__content">
-    <span (click)="modal.classList.remove('active')"
+    <span (click)="onChange.emit()"
       class="modal__close">&times;</span>
     <ng-content></ng-content>
   </div>

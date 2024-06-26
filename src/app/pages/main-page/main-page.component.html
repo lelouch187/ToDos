@@ -1,10 +1,21 @@
-<p>main-page works!</p>
 <div class="create_form">
   <button (click)="onVisibleModal()"
     mat-fab>
     <mat-icon>add</mat-icon>
   </button>
-  <app-modal [visibleModal]="visibleModal">
-    123
+  <app-modal (onChange)="onHideModal()"
+    [visibleModal]="visibleModal">
+    <form class="form">
+      <mat-form-field>
+        <mat-label>Введите название столбца</mat-label>
+        <input class="input"
+               matInput
+               required
+        />
+      </mat-form-field>
+
+      <button mat-stroked-button>Создать</button>
+    </form>
   </app-modal>
+  <pre>{{visibleModal}}</pre>
 </div>

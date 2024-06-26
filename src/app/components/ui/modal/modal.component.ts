@@ -1,4 +1,4 @@
-import {Component, Input, signal} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-modal',
@@ -8,5 +8,6 @@ import {Component, Input, signal} from '@angular/core';
   styleUrl: './modal.component.scss'
 })
 export class ModalComponent {
-  @Input('visibleModal') is_visible=false;
+  @Input('visibleModal') is_visible = false;
+  @Output() onChange = new EventEmitter<boolean>()
 }
