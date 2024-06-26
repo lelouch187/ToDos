@@ -1,1 +1,10 @@
 <p>main-page works!</p>
+<div class="create_form">
+  <button (click)="onVisibleModal()"
+    mat-fab>
+    <mat-icon>add</mat-icon>
+  </button>
+  <app-modal [visibleModal]="visibleModal">
+    123
+  </app-modal>
+</div>
