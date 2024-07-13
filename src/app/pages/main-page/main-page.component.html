@@ -1,20 +1,36 @@
-<div class="create_form">
-  <button (click)="onVisibleModal()"
-    mat-fab>
-    <mat-icon>add</mat-icon>
-  </button>
-  <app-modal (onChange)="onHideModal()"
-    [visibleModal]="visibleModal">
-    <form class="form">
-      <mat-form-field>
-        <mat-label>Введите название столбца</mat-label>
-        <input class="input"
-               matInput
-               required
-        />
-      </mat-form-field>
+<main class="main">
+  <div class="create_form">
+    <div class="content">
+      @for (column of columns; track column.ID) {
+        <div class="column">
+          <div class="column__header">
+            @if(is_edit){
+              <input type="text">
+            }@else{
+              <p class="title">{{column.Title}}</p>
+            }
+            <app-drop-down-menu></app-drop-down-menu>
+          </div>
+        </div>
+      }
+      <button (click)="onVisibleModal()"
+              mat-fab>
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+    <app-modal (onChange)="onHideModal()"
+               [visibleModal]="visibleModal">
+      <form class="form">
+        <mat-form-field>
+          <mat-label>Введите название столбца</mat-label>
+          <input class="input"
+                 matInput
+                 required
+          />
+        </mat-form-field>
 
-      <button mat-stroked-button>Создать</button>
-    </form>
-  </app-modal>
-</div>
+        <button mat-stroked-button>Создать</button>
+      </form>
+    </app-modal>
+  </div>
+</main>
